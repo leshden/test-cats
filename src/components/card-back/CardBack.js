@@ -1,10 +1,13 @@
+import CardBackBorder from '../card-back-border/CardBackBorder';
 import {CardBackContainer} from './CardBackStyled';
 
 const CardBack = () => {
     return (
-      <CardBackContainer>
-        CardInfo
-      </CardBackContainer>
+        <CardBackBorder>
+          <CardBackContainer>
+            CardInfo
+          </CardBackContainer>
+        </CardBackBorder>
     );
 }
 
