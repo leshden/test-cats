@@ -4,7 +4,7 @@ export const CardContainer = styled.div`
   width: 320px;
   height: 509px;
 
-  background: white;
+  background: yellow;
   text-align: center;
 
   margin: 25px 40px;
