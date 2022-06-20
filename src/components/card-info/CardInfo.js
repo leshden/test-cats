@@ -6,8 +6,15 @@ import {CardInfoContainer,
         CardInfoSecondName,
         CardInfoDescription} from './CardInfoStyled';
 import CardInfoWeight from '../card-info-weight/CardInfoWeight';
+import {useContext} from 'react';
+import {CardContext} from '../../contexts/CardContext';
 
 const CardInfo = ({color}) => {
+  const {info} = useContext(CardContext);
+  const {first_name, last_name, description, weight} = info;
+  console.log('CardInfo');
+  console.log(info);
+
   return (
     <CardInfoContainer>
       <CardInfoContainerLeft />
@@ -16,21 +23,24 @@ const CardInfo = ({color}) => {
           Сказочное заморское яство
         </CardInfoTitle>
         <CardInfoFirstName>
-          Нямушка
+          {first_name}
         </CardInfoFirstName>
         <CardInfoSecondName>
-          с рыбой
+          {last_name}
         </CardInfoSecondName>
         <CardInfoDescription>
-          <div>
-            40 порций
-          </div>
-          <div>
-            30 порций
-          </div>
+          {
+            description.map((item, index)=>{
+              return(
+                <div key={index}>
+                  {item}
+                </div>
+              );
+            })
+          }
         </CardInfoDescription>
       </CardInfoContainerRight>
-      <CardInfoWeight weight={12} color={color} />
+      <CardInfoWeight weight={weight} color={color} />
     </CardInfoContainer>
   );
 }

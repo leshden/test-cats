@@ -1,6 +1,7 @@
 import {CardInfoWeightContainer, CardInfoWeightValue, CardInfoWeightText} from './CardInfoWeightStyled';
 
 const CardInfoWeight = ({weight, color}) => {
+  
   return (
     <CardInfoWeightContainer color={color}>
       <CardInfoWeightValue>
