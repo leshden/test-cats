@@ -4,12 +4,10 @@ import {CardInfoContainer,
         CardInfoTitle,
         CardInfoFirstName,
         CardInfoSecondName,
-        CardInfoDescription,
-        CardInfoWeightContainer,
-        CardInfoWeight,
-        CardInfoWeightText} from './CardInfoStyled';
+        CardInfoDescription} from './CardInfoStyled';
+import CardInfoWeight from '../card-info-weight/CardInfoWeight';
 
-const CardInfo = () => {
+const CardInfo = ({color}) => {
   return (
     <CardInfoContainer>
       <CardInfoContainerLeft />
@@ -32,14 +30,7 @@ const CardInfo = () => {
           </div>
         </CardInfoDescription>
       </CardInfoContainerRight>
-      <CardInfoWeightContainer>
-        <CardInfoWeight>
-          0.5
-        </CardInfoWeight>
-        <CardInfoWeightText>
-          кг
-        </CardInfoWeightText>
-      </CardInfoWeightContainer>
+      <CardInfoWeight weight={12} color={color} />
     </CardInfoContainer>
   );
 }

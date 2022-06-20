@@ -1,8 +1,9 @@
 import {CardBackBorderContainer} from './CardBackBorderStyled';
 
-const CardBackBorder = ({children}) => {
+const CardBackBorder = ({children, color}) => {
+  
     return (
-      <CardBackBorderContainer>
+      <CardBackBorderContainer color={color}>
         {children}
       </CardBackBorderContainer>
     );

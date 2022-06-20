@@ -16,3 +16,12 @@ export const CardBackCat = styled.img`
   top: 208px; left: -24px;
   z-index: -1;
 `;
+
+export const CardBackHandlerEvents = styled.img`
+  position: absolute;
+  width:100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+`;
