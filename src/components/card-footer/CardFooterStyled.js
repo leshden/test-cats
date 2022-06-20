@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CardFooterContainer = styled.div`
-
+  font-family: 'Trebuchet MS';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
