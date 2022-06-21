@@ -6,6 +6,8 @@ import {useState, useEffect} from 'react';
 
 const Card = ({info}) => {
 
+  const {available} = info;
+
   const BLUE_COLOR = '#1698D9';
   const LIGHT_BLUE_COLOR = '#2EA8E6';
   const PINK_COLOR = '#D91667';
@@ -14,7 +16,9 @@ const Card = ({info}) => {
 
   const [color, setColor] = useState(BLUE_COLOR);
   const [isSelected, setIsSelected] = useState(false);
-  const [isAvailable, setIsAvailable] = useState(true);
+  const [isAvailable, setIsAvailable] = useState(available);
+
+  const getLightPinkColor = () => LIGHT_PINK_COLOR;
 
   useEffect(()=> {
     if (!isAvailable) {
@@ -51,8 +55,9 @@ const Card = ({info}) => {
                   onMouseOut={handleOutCard}
                   onClick={handleClickCard}
                   isAvailable = {isAvailable}
-                  color = {color}/>
-        <CardFooter onClick={handleClickCard} />
+                  color = {color}
+                  getLightPinkColor = {getLightPinkColor}/>
+        <CardFooter onClick={handleClickCard} isSelected = {isSelected} />
       </CardContainer>
     </CardProvider>
   );

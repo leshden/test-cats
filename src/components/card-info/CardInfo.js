@@ -9,17 +9,33 @@ import CardInfoWeight from '../card-info-weight/CardInfoWeight';
 import {useContext} from 'react';
 import {CardContext} from '../../contexts/CardContext';
 
-const CardInfo = ({color}) => {
+const CardInfo = ({color, getLightPinkColor}) => {
   const {info} = useContext(CardContext);
   const {first_name, last_name, description, weight} = info;
+
+  const isLightPinkColor = () => color === getLightPinkColor();
+
+  const DefaultTitle = () => {
+    return (
+      <CardInfoTitle>
+        Сказочное заморское яство
+      </CardInfoTitle>
+    )
+  }
+
+  const SelectedHoverTitle = () => {
+    return (
+      <CardInfoTitle style={{color: "#E52E7A"}}>
+        Котэ не одобряет?
+      </CardInfoTitle>
+    )
+  }
 
   return (
     <CardInfoContainer>
       <CardInfoContainerLeft />
       <CardInfoContainerRight>
-        <CardInfoTitle>
-          Сказочное заморское яство
-        </CardInfoTitle>
+        {isLightPinkColor() ? <SelectedHoverTitle /> : <DefaultTitle /> }
         <CardInfoFirstName>
           {first_name}
         </CardInfoFirstName>

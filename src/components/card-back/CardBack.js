@@ -3,7 +3,7 @@ import {CardBackContainer, CardBackCat, CardBackHandlerEvents, CardBackUnavailab
 import CardInfo from '../card-info/CardInfo';
 import cat from '../../assets/images/cat.png';
 
-const CardBack = ({onMouseOver, onMouseOut, onClick, color, isAvailable}) => {
+const CardBack = ({onMouseOver, onMouseOut, onClick, color, isAvailable, getLightPinkColor}) => {
 
     return (
         <CardBackBorder color={color}>
@@ -11,7 +11,7 @@ const CardBack = ({onMouseOver, onMouseOut, onClick, color, isAvailable}) => {
             <CardBackHandlerEvents onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={onClick}/>
             { !isAvailable && <CardBackUnavailable />}
             <CardBackCat  src={cat} />
-            <CardInfo color={color} />
+            <CardInfo color={color} getLightPinkColor={getLightPinkColor} />
           </CardBackContainer>
         </CardBackBorder>
     );
