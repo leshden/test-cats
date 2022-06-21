@@ -12,8 +12,6 @@ import {CardContext} from '../../contexts/CardContext';
 const CardInfo = ({color}) => {
   const {info} = useContext(CardContext);
   const {first_name, last_name, description, weight} = info;
-  console.log('CardInfo');
-  console.log(info);
 
   return (
     <CardInfoContainer>

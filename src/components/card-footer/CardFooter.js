@@ -1,9 +1,9 @@
-import {CardFooterContainer} from './CardFooterStyled';
+import {CardFooterContainer, CardFooterHref} from './CardFooterStyled';
 
-const CardFooter = () => {
+const CardFooter = ({onClick}) => {
   return (
     <CardFooterContainer>
-      Чего сидишь ?
+      Чего сидишь? Порадуй котэ, <CardFooterHref href='#' onClick={onClick}>купи</CardFooterHref>
     </CardFooterContainer>
   );
 }
